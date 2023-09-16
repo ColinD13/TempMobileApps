@@ -1,0 +1,1 @@
+C:\Advanced Mobile Apps\PersonalProject\PersonalProject\PersonalProject.csproj;x64

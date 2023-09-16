@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PersonalProject.MainPage"
+             xmlns:local="clr-namespace:PersonalProject.ViewModels">
+
+    <ContentPage.BindingContext>
+        <local:CardViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label Text="Sports Cards Database Storage" FontSize="Large" HorizontalOptions="Center"/>
+            <VerticalStackLayout HorizontalOptions="Center">
+
+                <Image Source="brady.jpg" WidthRequest="250"/>
+
+                <Grid HorizontalOptions="Center" VerticalOptions="Center" Padding="0,50,0,50" RowSpacing="25" ColumnSpacing="25"> 
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="150"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Player Name" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Entry Placeholder="Tom Brady" Grid.Row="0" Grid.Column="1" Text="{Binding newCard.playerName}"/>
+
+                    <Label Text="Card Brand" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Entry Placeholder="Panini" Grid.Row="1" Grid.Column="1" Text="{Binding newCard.brand}"/>
+
+                    <Label Text="Brand Set" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Entry Placeholder="Elite" Grid.Row="2" Grid.Column="1" Text="{Binding newCard.brandSet}"/>
+
+                    <Label Text="Card ID" Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Entry Placeholder="***" Grid.Row="3" Grid.Column="1" Text="{Binding newCard.cardID}"/>
+
+                    <Button Text="Add Card" FontSize="Medium" HorizontalOptions="Center" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Command="{Binding NewCardCommand}"/>
+                </Grid>
+
+                <Image Source="mahomes.jpg" WidthRequest="250"/>
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
